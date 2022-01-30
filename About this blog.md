@@ -1,7 +1,29 @@
 # About this blog
 
-## Images work
-![svelte logo](./res/svelte.svg)
+This blog uses Github as the CMS, meaning github hosts the markdown and media files for the blog.
 
-## Links Work
+## Why?
+This is nifty because 
+1. you don't pay for a CMS / hosting
+2. your blogs can be version tracked
+3. you can write blogs in the same environment that you write your code in
+
+## How?
+The blog uses the `Github Rest API` to query all the files in a repo, it then iterates through all the markdown files, building a tree view which is viewed on the `/blogs` page.
+
+When a user clicks on the a blog they are linked to `/blog?file=[SOME FILE IN THE REPO]` where a call is made to the `raw.githubusercontent.com` endpoint to fetch the content for that file.
+
+The only complicated part of this is how images and links are handled. A custom `SvelteMarkdown` renderer was created for both the Image and the Link which translated the image `src` to be fetched from the `raw.githubusercontent.com`, and translated the Link `href` to be relative to the currently open file, linking to the relevant `/blog?file=[SOME FILE IN THE REPO]` (if it was a relative link).
+
+### Images work
+![svelte logo](./res/svelte.svg)
+- this image is hosted on github
+
+### Links Work
 [link](<./Reflections/01-2022.md>)
+- this link works in github, vs code, and this blog 
+
+## Source Code
+The following is a minimum repo of this blog built in Svelte
+
+#### [repo](https://github.com/MarcDAFrame/SvelteGithubBlog)
