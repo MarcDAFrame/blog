@@ -14,6 +14,18 @@ The idea is to help keep myself inline and oriented at my goals - sort of like a
 
 # The OK
 - neither good nor bad, note worthy
+
+# Next Month
+## Plan
+- high level overview of what I'm going to do next month
+## Start
+- habits that I want to form
+## Quit
+- habits that I have to unlearn
+## Continue
+- habits that I should continue / increase
+## Goals
+- metrics by which to measure my performance
 ```
 
 
